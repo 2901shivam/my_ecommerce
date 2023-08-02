@@ -1,17 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+
+
 import Header from './componenets/Navbar/Header';
 import Footer from './componenets/Footer/Footer';
-import Body from './componenets/Body/Body';
-import Product from './componenets/Body/Product';
 import BodyContent from './componenets/Body/BodyContent';
+import Cart from './componenets/Cart/Cart';
+import { useState } from 'react';
+
+
 
 function App() {
+  const[cartitems,setCartItems]=useState(false);
+  
+  const cartshownhandeler=()=>{
+    setCartItems(true);
+  }
+  const hideCartHandler=()=>{
+    setCartItems(false)
+  }
   return (
     <>
-      <Header/>
-      <BodyContent/>
-      <Footer/>
+     <Header onShowcart={cartshownhandeler}/>
+     {cartitems && <Cart onClose={hideCartHandler}/>}
+     <BodyContent/>
+     <Footer/>
     </>
   );
 }

@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.prodList{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 2px 14px 0;
+}
+.heading{
+    display: flex;
+    justify-content: space-between;
+
+}
+.image{
+    height: 100px;
+    width: 90px;
+    position: relative;
+    right: 2.5rem;
+}
+.title{
+    position: relative;
+    right: 6.5rem;
+    top: 1rem;
+    width: 70px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-left: 5px;
+}
+.price{
+    position: relative;
+    right: 7rem;
+    top: 2rem;
+}
+.quantity{
+    position: relative;
+    top: 2rem;
+}
+.removeBtn{
+    height: 2rem;
+    width: 5rem;
+    border-radius: 15%;
+    position: relative;
+    top: 2rem;
+    background-color: red;
+    color: white;
+}
+
+.closeBtn{
+    height:2rem;
+    width:6rem;
+    border-radius: 10%;
+    background-color: coral;
+    color: aliceblue;
+    margin-left: 15rem;
+}

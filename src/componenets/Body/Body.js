@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, Container } from 'react-bootstrap'
 
-const Body = () => {
+const Body = (props) => {
   return (
     <Card style={{height:100 , width:'auto',background: 'antiquewhite', textalign:'center'}}>
     <Container >
