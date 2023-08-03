@@ -1,53 +1,26 @@
-import React from "react";
-import { Button, Card, Container, Row, Col } from "react-bootstrap";
+import React, { useContext } from "react";
+import './Product.css';
+import { Card, Container, Row, Col } from "react-bootstrap";
+import { myContext } from "../../contexApi/Contex";
 
-const productsArr = [
-  {
-    title: "Colors",
 
-    price: 100,
-
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
-  },
-
-  {
-    title: "Black and white Colors",
-
-    price: 50,
-
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
-  },
-
-  {
-    title: "Yellow and Black Colors",
-
-    price: 70,
-
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
-  },
-
-  {
-    title: "Blue Color",
-
-    price: 100,
-
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%204.png",
-  },
-];
 
 const Product = (props) => {
+
+ const {productsArr,addItem}= useContext(myContext)
   return (
-    <Container>
+    <Container className="main" >
       <Row>
         {productsArr.map((product,index) => {
           return (
-            <Col xs={12} md={6} key={index}>
-              <Card className="shadow-lg">
+            <Col xs={12} md={6} key={index} className="container">
+              <Card className="images">
                 <img src={product.imageUrl} alt={product.title} />
-                <br /> 
+                </Card>
+                <div className="content">
                 {product.price}
-                <Button variant="primary">Add to cart</Button>
-              </Card>
+                <button className="button" onClick={()=>addItem(product.id)}>Add to cart</button>
+                </div>              
             </Col>
           );
         })}

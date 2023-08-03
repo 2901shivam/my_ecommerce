@@ -1,0 +1,20 @@
+.myNav{
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+}
+.navTitles{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 1rem;
+}
+.navTitles > div{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 400px;
+    top: 1.5rem;
+    padding-right: 10px;
+}

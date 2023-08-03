@@ -1,11 +1,9 @@
 
-
 import Header from './componenets/Navbar/Header';
 import Footer from './componenets/Footer/Footer';
 import BodyContent from './componenets/Body/BodyContent';
 import Cart from './componenets/Cart/Cart';
 import { useState } from 'react';
-
 
 
 function App() {
@@ -18,12 +16,12 @@ function App() {
     setCartItems(false)
   }
   return (
-    <>
+  <>
      <Header onShowcart={cartshownhandeler}/>
      {cartitems && <Cart onClose={hideCartHandler}/>}
      <BodyContent/>
      <Footer/>
-    </>
+     </>
   );
 }
 
