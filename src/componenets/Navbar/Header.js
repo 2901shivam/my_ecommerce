@@ -1,6 +1,7 @@
 import React,{useContext} from "react";
-import { Container, Navbar,Dropdown, Badge,Nav } from "react-bootstrap";
+import { Container, Navbar,Dropdown, Badge,Nav,} from "react-bootstrap";
 import { myContext } from "../../contexApi/Contex";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 const Header = (props) => {
@@ -14,7 +15,7 @@ const Header = (props) => {
         <div className="innerNavTitles">
           <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <NavLink to='about/'>About</NavLink>
         </div>
             
           </Nav>
