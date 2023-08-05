@@ -13,9 +13,9 @@ const Header = (props) => {
         <Navbar.Brand className=".mb3">
         <Nav className="me-auto navTitles">
         <div className="innerNavTitles">
-          <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <NavLink to='about/'>About</NavLink>
+            <NavLink to='/Home'>Home</NavLink>
+            <NavLink to='/store'>Store</NavLink>
+            <NavLink to='/about'>About</NavLink>
         </div>
             
           </Nav>

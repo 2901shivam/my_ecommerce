@@ -1,0 +1,17 @@
+.main{
+    margin-top: 6rem;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+.btn{
+    margin-left: 200px;
+    background-color: aqua;
+    color: white;
+    height: 2rem;
+    width: 8rem;
+    border-radius: 0cm;
+}
+.btn:hover{
+    background-color: rgb(154, 226, 226);
+
+}

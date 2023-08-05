@@ -5,6 +5,7 @@ import Cart from "./componenets/Cart/Cart";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./componenets/Navbar/About";
+import Home from "./componenets/Navbar/Home";
 
 function App() {
   const [cartitems, setCartItems] = useState(false);
@@ -17,16 +18,16 @@ function App() {
   };
   return (
     <BrowserRouter>
+      <Header onShowcart={cartshownhandeler} />
       <Routes>
-        <Route path="about/" element={<About/>} />
-      
-        </Routes>
-
-    <Header onShowcart={cartshownhandeler} /> 
-      
-
+        <Route path="/store" element={<BodyContent/>}/>
+        <Route path="/about" element={<About />} />
+        <Route path="/home" element={<Home/>}/>
+      </Routes>
+     
       {cartitems && <Cart onClose={hideCartHandler} />}
-      <BodyContent />
+      {/* <BodyContent /> */}
+      
       <Footer />
     </BrowserRouter>
   );

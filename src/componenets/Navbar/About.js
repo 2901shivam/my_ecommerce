@@ -1,9 +1,11 @@
 import React from 'react'
+import Header from './Header'
 
 const About = () => {
   return (
     <div className='container'>
-    <h1>About Heading</h1>
+    
+    <h1>Heading</h1>
       <div className='image'></div>
       <p>
       Welcome to our vibrant online marketplace, where shopping becomes an
