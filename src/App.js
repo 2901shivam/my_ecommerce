@@ -6,6 +6,7 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./componenets/Navbar/About";
 import Home from "./componenets/Navbar/Home";
+import Contact from "./componenets/Navbar/Contact";
 
 function App() {
   const [cartitems, setCartItems] = useState(false);
@@ -23,6 +24,7 @@ function App() {
         <Route path="/store" element={<BodyContent/>}/>
         <Route path="/about" element={<About />} />
         <Route path="/home" element={<Home/>}/>
+        <Route path="/contact" element={<Contact/>}/>
       </Routes>
      
       {cartitems && <Cart onClose={hideCartHandler} />}
