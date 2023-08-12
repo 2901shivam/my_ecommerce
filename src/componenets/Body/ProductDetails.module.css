@@ -1,0 +1,106 @@
+
+.cardWrapper {
+    background-color: #cecece;
+    max-width: 800px;
+    border: 1px solid #9b9898;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 2px 4px rgba(172, 148, 148, 0.1);
+  }
+  
+  .image {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.5s ease;
+  }
+  .image:hover{
+    transform: scale(1.2);
+  }
+  .zoom_area{
+    max-width: 500px;
+    display: inline-block;
+    position: relative;
+    left: 4rem;
+    bottom: 3rem;
+    overflow: hidden;
+  }
+  .sampleImg{
+    height: 100px;
+    width: 100px;
+    margin: 1rem;
+    transition: transform 0.3s ease;
+  }
+  .sampleImg:hover{
+    transform: scale(1.2);
+    box-shadow: 2px 4px 6px black;
+  }
+  .title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .description {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 10px;
+  }
+  
+  .starRatings {
+    font-size: 20px;
+    color: #f39c12;
+  }
+  .reviews{
+    margin-top: 1rem;
+  }
+  .reviews>p{
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+  }
+  .reviews>h3{
+    font-size: 24px;
+    line-height: 18px;
+  }
+  .price {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+  }
+  .addBtn{
+    justify-self: flex-start;
+    display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  }
+  .addBtn:hover{
+    background-color: #2980b9;  
+    box-shadow: 3px 4px 8px #053b5f;
+  }
+  .backBtn{
+    text-decoration: none;
+    text-align: center;
+    height: 3rem;
+    width: 8rem;
+    position: relative;
+    bottom: 600px;
+    left: 50px;
+    padding: 8px 20px;
+    background-color: #f05555;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .backBtn:hover {
+    background-color: #ce1d1d;
+    box-shadow: 2px 3px 8px #e20000;
+  }

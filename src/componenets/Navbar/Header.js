@@ -17,11 +17,12 @@ const Header = (props) => {
             <NavLink to='/store'>Store</NavLink>
             <NavLink to='/about'>About</NavLink>
             <NavLink to='/contact'>Contact</NavLink>
+            <NavLink to='/Login'>Login</NavLink>
         </div>
             
           </Nav>
         </Navbar.Brand>
-        <Dropdown alignRight>
+        <Dropdown>
           <Dropdown.Toggle variant="success" id="dropdown-basic" onClick={props.onShowcart}>
            {/* <GiShoppingCart color='white' fontSize='25px'/> */}
             <Badge>{numberOfCartItems}</Badge>
