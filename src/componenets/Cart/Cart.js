@@ -23,7 +23,7 @@ const Cart = (props) => {
       <div className='title'>{item.title}</div>
       <div className='price'>{item.price}</div>   
       <div className='quantity'>{item.quantity}</div>
-      <button className='removeBtn' onClick={()=>removeItem(item.id)}>Remove</button>
+      <button className='removeBtn' onClick={()=>removeItem(item.id, item._id)}>Remove</button>
       </li>)
     })}
       <button className='closeBtn' onClick={props.onClose}>Close Cart</button>

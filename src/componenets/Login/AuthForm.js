@@ -1,14 +1,16 @@
 import { useContext, useRef, useState } from 'react';
 
+
 import classes from './AuthForm.module.css';
-import { json } from 'react-router-dom';
-import { AuthenticationContex, myAuthentication } from '../../contexApi/AuthenticationContex';
+import { useNavigate } from 'react-router-dom';
+import { myAuthentication } from '../../contexApi/AuthenticationContex';
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
   const emailref=useRef();
   const passwordref=useRef();
   const{loginHandler}=useContext(myAuthentication);
+  const navigate= useNavigate();
   
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
@@ -27,17 +29,17 @@ const AuthForm = () => {
           email:Enteredemail,
           password:Enteredpassword,
           returnSecureToken:true
-
         }),
         headers:{
           'Content-Type':'Application/json'
         }
       }).then((response)=>{
         if(response.ok){
-
-          return response.json().then(data=>{
+           response.json().then(data=>{
             //console.log(data);
-            loginHandler(data.idToken);
+            let userEmail= Enteredemail.replace("@", "").replace(".", "");
+            loginHandler(data.idToken, userEmail);
+            navigate("/store");
           });
         }
         else{

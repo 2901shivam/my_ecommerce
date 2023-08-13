@@ -51,23 +51,24 @@ const Contact = (props) => {
   };
 
   return (
-    <form className={classes.container} onSubmit={submit}>
+     <section className={classes.container}>
+    <form  onSubmit={submit}>
       <label htmlFor="Name">Name</label>
-      <input
+      <input className={classes.control}
         type="text"
         value={name}
         id="nameId"
         onChange={nameChangeHandler}
       />
       <label htmlFor="Email">Email</label>
-      <input
+      <input className={classes.control}
         type="email"
         value={email}
         id="emailId"
         onChange={emailChangehandler}
       />
       <lable htmlFor="Number">Phone Number</lable>
-      <input
+      <input className={classes.control}
         type="number"
         value={number}
         id="numberId"
@@ -75,6 +76,7 @@ const Contact = (props) => {
       />
       <button>Submit</button>
     </form>
+    </section>
   );
 };
 

@@ -15,15 +15,13 @@ const AuthenticationContex = (props) => {
   const logoutHandler = () => {
     setToken(null);
     localStorage.removeItem('token');
+    localStorage.removeItem('email');
   };
 
-  const loginHandler = (token) => {
+  const loginHandler = (token,email) => {
     setToken(token);
     localStorage.setItem('token',token);
-    const timer= setTimeout(logoutHandler,50000);
-    return(()=>{
-      clearInterval(timer);
-    })
+    localStorage.setItem('email',email);
   };
 
   
