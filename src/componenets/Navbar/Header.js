@@ -17,26 +17,27 @@ const Header = (props) => {
      navigate('/login');
   }
   return (
-    <Navbar className="myNav" bg="dark" variant="dark" style={{ height: 80}}>
+    <Navbar className="myNav" bg="dark"  variant="dark" style={{ height: 80}}>
       <Container>
         <Navbar.Brand className=".mb3">
         <Nav className="me-auto navTitles">
-        <div className="innerNavTitles">
+        <div className="navTitles">
             <NavLink to='/'>Home</NavLink>
             {<NavLink to='/store'>Store</NavLink>}
             <NavLink to='/about'>About</NavLink>
             <NavLink to='/contact'>Contact</NavLink>
            {!userIsLogedin&& <NavLink to='/login'>Login</NavLink>}
-            {userIsLogedin &&<button onClick={handleLogoutClick}>Logout</button>}
+            {userIsLogedin &&<button className="logoutBtn" onClick={handleLogoutClick}>Logout</button>}
         </div>
-            
-          </Nav>
+         </Nav>
         </Navbar.Brand>
-        <Dropdown>
+        <Dropdown className="mt-4">
+        
           {userIsLogedin && <Dropdown.Toggle variant="success" id="dropdown-basic" onClick={props.onShowcart}>
            {/* <GiShoppingCart color='white' fontSize='25px'/> */}
             <Badge>{numberOfCartItems}</Badge>
           </Dropdown.Toggle>}
+         
         </Dropdown>
       </Container>
     </Navbar>

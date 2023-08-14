@@ -53,27 +53,33 @@ const Contact = (props) => {
   return (
      <section className={classes.container}>
     <form  onSubmit={submit}>
+    <div className={classes.control}>
       <label htmlFor="Name">Name</label>
-      <input className={classes.control}
+      <input 
         type="text"
         value={name}
         id="nameId"
         onChange={nameChangeHandler}
       />
+      </div>
+      <div className={classes.control}>
       <label htmlFor="Email">Email</label>
-      <input className={classes.control}
+      <input 
         type="email"
         value={email}
         id="emailId"
         onChange={emailChangehandler}
       />
+      </div>
+      <div className={classes.control}>
       <lable htmlFor="Number">Phone Number</lable>
-      <input className={classes.control}
+      <input 
         type="number"
         value={number}
         id="numberId"
         onChange={numberChangeHandler}
       />
+      </div>
       <button>Submit</button>
     </form>
     </section>

@@ -7,6 +7,10 @@ import { myContext } from '../../contexApi/Contex';
 const Cart = (props) => {
   const {cart, removeItem} = useContext(myContext);
 
+  let amount= cart.reduce((amount, item)=>{
+    return amount+item.price
+  },0)
+
     return(
       <Modal onClose={props.onClose}>
       <div className='headingContainer'>
@@ -23,9 +27,10 @@ const Cart = (props) => {
       <div className='title'>{item.title}</div>
       <div className='price'>{item.price}</div>   
       <div className='quantity'>{item.quantity}</div>
-      <button className='removeBtn' onClick={()=>removeItem(item.id, item._id)}>Remove</button>
+      <button className='removeBtn' onClick={()=>removeItem(item._id)}>Remove</button>
       </li>)
     })}
+    <h1>Total Amount:{amount}</h1>
       <button className='closeBtn' onClick={props.onClose}>Close Cart</button>
       </ul>
       </Modal>

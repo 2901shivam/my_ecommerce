@@ -44,20 +44,21 @@ const addItem= async(id)=>{
     }
     if(addProduct && !indexofaddProduct){
       const userEmail= localStorage.getItem("email");
-      const res= await axios.post(`https://crudcrud.com/api/20823ae04eb74c8bbe6c297505217feb/user${userEmail}`,addProduct)
+      const res= await axios.post(`https://crudcrud.com/api/b2212bd1301e48d6815919f81597d119/user${userEmail}`,addProduct)
       console.log(res.data); 
-        setcart((prev)=>[...prev, addProduct]);
+      const productWithId= {...addProduct, _id:res.data._id}
+        setcart((prev)=>[...prev, productWithId]);
     }
   }catch(er){
     console.log("Product not added - " + er);
   }
 }
 
-const removeItem = async (itemid, id)=>{
+const removeItem = async (id)=>{
   try{
-    setcart((prevCart)=> prevCart.filter((item)=>item.id!==itemid));
+    setcart((prevCart)=> prevCart.filter((item)=>item._id!==id));
     const userMail= localStorage.getItem('email');
-    await axios.delete(`https://crudcrud.com/api/20823ae04eb74c8bbe6c297505217feb/user${userMail}/${id}`)
+    await axios.delete(`https://crudcrud.com/api/b2212bd1301e48d6815919f81597d119/user${userMail}/${id}`)
  } catch(err){
     console.log("Item not removed- " + err);
   }     
@@ -67,7 +68,7 @@ const removeItem = async (itemid, id)=>{
         const fetchItems= async()=>{
           try{
             const userMail= localStorage.getItem('email');
-           const response= await axios.get(`https://crudcrud.com/api/20823ae04eb74c8bbe6c297505217feb/user${userMail}`);
+           const response= await axios.get(`https://crudcrud.com/api/b2212bd1301e48d6815919f81597d119/user${userMail}`);
           setcart(response.data);
           }catch(err){
             console.log("Fetch Items failed- " + err);
